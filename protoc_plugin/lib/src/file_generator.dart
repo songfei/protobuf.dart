@@ -4,7 +4,7 @@
 
 part of '../protoc.dart';
 
-final _dartIdentifier = RegExp(r'^\w+$');
+final _dartIdentifier = RegExp(r'^[A-Za-z0-9_<>]+$');
 final _formatter = DartFormatter();
 const String _convertImportPrefix = r'$convert';
 
