@@ -441,6 +441,11 @@ class MessageGenerator extends ProtobufContainer {
 
       generateFieldsAccessorsMutators(out);
       mixin?.injectHelpers(out);
+
+      if (mixinClause.contains('ReduxPrivateAction') ||
+          mixinClause.contains('ReduxNotificationAction')) {
+        out.print('\nString get packageName => \'$package\';\n');
+      }
     });
     out.println();
   }
